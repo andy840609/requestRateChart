@@ -5,7 +5,7 @@
 |:------------- |:-------------|:-----:|:-----:|
 | selector | DOM selector to attach the chart to | body | no |
 | dataObj | Chart data | none | yes |
-| typeNameObj | Chart data | none | no |
+| typeNameObj | Chart data | none | yes |
 
 
 ## 需要資源
@@ -24,7 +24,7 @@
     <link rel="stylesheet" href="../src/bootstrap-4.5.3-dist/css/bootstrap.min.css">
     <link href="../src/requestRateChart.css" rel="stylesheet">
 ```
-2. requestRate().dataObj()填json結構的資料,typeNameObj()是用來作legend字串的,不填的話legend會顯示id
+2. requestRate().dataObj()填json結構的資料,typeNameObj()是用來作legend字串的
 
 ```javascript
 // chart data example
