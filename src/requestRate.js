@@ -52,6 +52,7 @@ function requestRate() {
     }
     chart.typesOfException = (vaule) => {
         typesOfException = vaule.map(v => !isNaN(v) ? parseInt(v) : v);
+        console.log('typesOfException=' + typesOfException);
         return chart;
     }
     function chart() {
@@ -294,7 +295,7 @@ function requestRate() {
 
             {      //刪掉不需要的type ＆ 算rateData
                 // const type_dont_show = [6, 7];
-                console.debug(typesOfException);
+                // console.debug(typesOfException);
                 const type_dont_show = typesOfException;
                 data = data.filter(d => !type_dont_show.includes(d[dataKeys[0]]));
                 typeName = typeName.filter(tn => !type_dont_show.includes(tn[typeNameKeys[0]]));
@@ -544,7 +545,7 @@ function requestRate() {
                                     .attr("alignment-baseline", "before-edge")
                                     .attr("position", "relative")
                                     .call(text_collection => text_collection.each(function (d) {
-                                        console.debug(this);
+                                        // console.debug(this);
                                         let text = d3.select(this);
                                         let string = d[typeNameKeys[1]];
 
@@ -844,7 +845,7 @@ function requestRate() {
                     ySelected_domain: ySelected_domain,
                     rateUnit: rateUnit,
                 };
-                console.debug(tmpObj);
+                // console.debug(tmpObj);
                 return tmpObj;
 
             };
