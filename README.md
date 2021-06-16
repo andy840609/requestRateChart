@@ -6,7 +6,7 @@
 | selector | DOM selector to attach the chart to | body | no |
 | dataObj | Chart data | none | yes |
 | typeNameObj | Chart data | none | yes |
-
+| typesOfException | types that don't show in chart | [] | no |
 
 ## 需要資源
 * [d3.js](https://d3js.org/)
@@ -24,7 +24,7 @@
     <link rel="stylesheet" href="../src/bootstrap-4.5.3-dist/css/bootstrap.min.css">
     <link href="../src/requestRateChart.css" rel="stylesheet">
 ```
-2. requestRate().dataObj()填json結構的資料,typeNameObj()是用來作legend字串的
+2. requestRate().dataObj()填json結構的資料,typeNameObj()是用來作legend字串的,typesOfException()填入一個陣列去除不要的type
 
 ```javascript
 // chart data example
@@ -69,9 +69,11 @@
         { id: 8, chinese_description: "地震 (繪圖)" }
     ]
 
-    
+      var typesOfException = [6, 7, 99];
+      
       var chart = requestRate()
             .selector('.container')
             .dataObj(dataObj)
             .typeNameObj(typeNameObj)
+            .typesOfException(typesOfException)
     chart();
