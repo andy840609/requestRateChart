@@ -51,7 +51,7 @@ function requestRate() {
         return chart;
     }
     chart.typesOfException = (vaule) => {
-        typesOfException = vaule;
+        typesOfException = vaule.map(v => !isNaN(v) ? parseInt(v) : v);
         return chart;
     }
     function chart() {
